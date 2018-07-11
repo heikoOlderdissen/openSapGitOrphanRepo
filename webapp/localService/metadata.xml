@@ -1,0 +1,109 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZN_MATLIST_STOCK_SRV" xml:lang="de" sap:schema-version="1">
+            <EntityType Name="Material" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="MATNR"/>
+                    <PropertyRef Name="WERKS"/>
+                </Key>
+                <Property Name="MATNR" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="WERKS" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BWKEY" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Bewertungskreis" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BWTAR" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Bewertungsart" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SPRAS" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Sprachenschlüssel" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MAKTX" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Materialkurztext" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MAKTG" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Materialkurztext  in Großschreibung für Matchcodes" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MAKTG_REPL" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="String ohne Trennzeichen" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="WERKS_BEZ" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Werksbezeichnung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BKLAS" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Bewertungsklasse" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LBKUM" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Gesamter bewerteter Bestand" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PEINH" Type="Edm.Decimal" Precision="5" Scale="0" sap:unicode="false" sap:label="Preiseinheit" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SALK3" Type="Edm.Decimal" Precision="13" Scale="2" sap:unicode="false" sap:label="Wert des gesamten bewerteten Bestandes" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="STPRS" Type="Edm.Decimal" Precision="11" Scale="2" sap:unicode="false" sap:label="Standardpreis" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="VERPR" Type="Edm.Decimal" Precision="11" Scale="2" sap:unicode="false" sap:label="Gleitender Durchschnittspreis/Periodischer Verrechnungspreis" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="VPRSV" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Preissteuerungskennzeichen" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BSTMI" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Mindestlosgröße" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DISMM" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Dispositionsmerkmal" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="EISBE" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Sicherheitsbestand" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LVORM" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Material auf Werksebene zum Löschen vormerken" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MMSTA" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Werksspezifischer Materialstatus" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BREIT" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Breite" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BRGEW" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Bruttogewicht" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="GEWEI" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Gewichtseinheit" sap:creatable="false" sap:updatable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="HOEHE" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Höhe" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LAENG" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Länge" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MATKL" Type="Edm.String" MaxLength="9" sap:unicode="false" sap:label="Warengruppe" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MEABM" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Einheit für Länge/Breite/Höhe" sap:creatable="false" sap:updatable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="MEINS" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Basismengeneinheit" sap:creatable="false" sap:updatable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="MFRNR" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Nummer eines Herstellers" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MFRPN" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Herstellerteilenummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MSTAE" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Werksübergreifender Materialstatus" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MTART" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Materialart" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="NTGEW" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Nettogewicht" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ZEINR" Type="Edm.String" MaxLength="22" sap:unicode="false" sap:label="Dokumentnummer (ohne Dokumentenverwaltungssystem)" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LAND1" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Länderschlüssel" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="NAME1" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Name 1" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ORT01" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Ort" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PSTLZ" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Postleitzahl" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SORTL" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Sortierfeld" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="MaterialWarehouse" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="LGNUM"/>
+                    <PropertyRef Name="LQNUM"/>
+                    <PropertyRef Name="MATNR"/>
+                    <PropertyRef Name="WERKS"/>
+                </Key>
+                <Property Name="LGNUM" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Lagernummer/Lagerkomplex" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="PSTLZ" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Postleitzahl" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LGORT" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Lagerort" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LGOBE" Type="Edm.String" MaxLength="16" sap:unicode="false" sap:label="Lagerort Bezeichnung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ORT01" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Ort" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LQNUM" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Quant" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MATNR" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Materialnummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="WERKS" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="WERKS_BEZ" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Werksname" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="CHARG" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Chargennummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BESTQ" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Bestandsqualifikation im Lagerverwaltungssystem" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SOBKZ" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Sonderbestandskennzeichen" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SONUM" Type="Edm.String" MaxLength="16" sap:unicode="false" sap:label="Sonderbestandsnummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LGTYP" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Lagertyp" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LGPLA" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Lagerplatz" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="AUSME" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Auszulagernde Menge" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BDATU" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Datum der letzten Bewegung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="EINME" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Einzulagernder Bestand" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="GESME" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Gesamtmenge" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MEINS" Type="Edm.String" MaxLength="3" sap:unicode="false" sap:label="Basismengeneinheit" sap:creatable="false" sap:updatable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="VERME" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Verfügbarer Bestand" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ZDATU" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Datum der letzten Zulagerung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BSTMI" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Mindestlosgröße" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="EISBE" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Sicherheitsbestand" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DISMM" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Dispomerkmal" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="DIBEZ" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Dispomerkmal Bezeichnung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MMSTA" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Materialstatus" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MTSTB" Type="Edm.String" MaxLength="25" sap:unicode="false" sap:label="Materialstatus Bezeichnung" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SPRAS" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Sprachenschlüssel" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MAKTX" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Materialkurztext" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MAKTG" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Materialkurztext  in Großschreibung für Matchcodes" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="NAME1" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Name 1" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LIFNR" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Kontonummer des Lieferanten bzw. Kreditors" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MFRNR" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Nummer eines Herstellers" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MFRPN" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Herstellerteilenummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ZEINR" Type="Edm.String" MaxLength="22" sap:unicode="false" sap:label="Zeichnungsnummer" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="LAND1" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Land" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZN_MATLIST_STOCK_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="MaterialSet" EntityType="ZN_MATLIST_STOCK_SRV.Material" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="MaterialWarehouseSet" EntityType="ZN_MATLIST_STOCK_SRV.MaterialWarehouse" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZN_MATLIST_STOCK_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZN_MATLIST_STOCK_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>
